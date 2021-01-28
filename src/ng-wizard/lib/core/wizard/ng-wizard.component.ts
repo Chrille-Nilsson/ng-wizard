@@ -373,17 +373,19 @@ export class NgWizardComponent implements OnDestroy, AfterContentInit {
     // Previous/Next Button enable/disable based on step
     if (!this.config.cycleSteps) {
       if (0 >= index) {
-        this.styles.previousButton = 'btn btn-secondary ng-wizard-btn-prev disabled';
+        this.styles.previousButton = 'btn btn-secondary ng-wizard-btn-prev hidden-button';
       }
       else {
         this.styles.previousButton = 'btn btn-secondary ng-wizard-btn-prev';
       }
 
       if (this.steps.length - 1 <= index) {
-        this.styles.nextButton = 'btn btn-secondary ng-wizard-btn-next disabled';
+        this.styles.nextButton = 'btn btn-secondary ng-wizard-btn-next hidden-button';
+        this.showExtraButtons = this.config.toolbarSettings.toolbarExtraButtons && this.config.toolbarSettings.toolbarExtraButtons.length > 0;
       }
       else {
         this.styles.nextButton = 'btn btn-secondary ng-wizard-btn-next';
+        this.showExtraButtons = false;
       }
     }
   }

@@ -21,7 +21,7 @@ export const DEFAULT_CONFIG: NgWizardConfig = {
         enableAllAnchors: false,
         markDoneStep: true,
         markAllPreviousStepsAsDone: true,
-        removeDoneStepOnNavigateBack: false,
+        removeDoneStepOnNavigateBack: true,
         enableAnchorOnDoneStep: true
     },
     theme: THEME.default,
